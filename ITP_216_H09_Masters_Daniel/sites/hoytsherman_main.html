@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" data-soc="v13.09"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" data-soc="v13.09"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" data-soc="v13.09"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" data-soc="v13.09"> <!--<![endif]-->
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"56969e1001",applicationID:"1128823026"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<title>Central Iowa Historic Entertainment Venue - Hoyt Sherman Place</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="en" http-equiv="content-language"/>
+<link href="/images/favicon.png" rel="icon" type="image/png"/>
+<link href="/images/favicon.png" rel="shortcut icon" type="image/png"/>
+<link href="/images/touch-icon.png" rel="apple-touch-icon" type="image/png"/>
+<link href="/images/touch-icon-76.png" rel="apple-touch-icon" sizes="76x76" type="image/png"/>
+<link href="/images/touch-icon-120.png" rel="apple-touch-icon" sizes="120x120" type="image/png"/>
+<link href="/images/touch-icon-152.png" rel="apple-touch-icon" sizes="152x152" type="image/png"/>
+<link href="/css/global.reset.min.css" rel="stylesheet" type="text/css"/>
+<link href="/css/global.css" rel="stylesheet" type="text/css"/>
+<link href="/css/global.gallery.css" rel="stylesheet" type="text/css"/>
+<link href="/css/global.extra.css" rel="stylesheet" type="text/css"/>
+<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript"></script>
+<script type="text/javascript">
+		WebFont.load({
+			google: { families: [ 'Alegreya+Sans:400,300,500,700:latin' ] }
+		});
+	</script>
+<script src="/js/modernizr.min.js" type="text/javascript"></script>
+<script src="/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="/js/global.js" type="text/javascript"></script>
+<script src="/js/global.gallery.js" type="text/javascript"></script>
+<script src="/js/banner.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="page">
+<header>
+<div class="container">
+<a class="logo" href="/">
+<img alt="Hoyt Sherman Place" src="/images/header/logo.png"/>
+</a>
+</div>
+<nav class="cf">
+<span class="menu">≡</span>
+<ul class="top_menu" id="top_menu">
+<li class="main-menu-first" id="top_menu_118">
+<a href="/calendar/events/" title="Events">Events</a>
+</li>
+<li class="" id="top_menu_125">
+<a href="/theater/" title="Theater ">Theater </a>
+<span class="submenu"><span class="triangle"></span></span>
+<ul class="sub">
+<li class="sub-menu-first" id="top_menu_127">
+<a href="/theater-photos/" title="Theater Photos ">Theater Photos </a>
+</li>
+<li class="sub-menu-last" id="top_menu_128">
+<a href="/theater/venue-information/" title="Venue Information">Venue Information</a>
+</li>
+</ul>
+</li>
+<li class="" id="top_menu_129">
+<a href="/gallery/" title="Art Gallery and Mansion ">Art Gallery and Mansion </a>
+<span class="submenu"><span class="triangle"></span></span>
+<ul class="sub">
+<li class="sub-menu-first" id="top_menu_131">
+<a href="/gallery/photos/" title="Gallery Photos">Gallery Photos</a>
+</li>
+<li class="" id="top_menu_150">
+<a href="/gallery/historic-mansion/" title="Historic Mansion">Historic Mansion</a>
+</li>
+<li class="sub-menu-last" id="top_menu_139">
+<a href="/gallery/art-restoration/" title="Art Restoration">Art Restoration</a>
+</li>
+</ul>
+</li>
+<li class="" id="top_menu_132">
+<a href="/membership/" title="Membership">Membership</a>
+<span class="submenu"><span class="triangle"></span></span>
+<ul class="sub">
+<li class="sub-menu-first" id="top_menu_140">
+<a href="/membership/annual-members/" title="Annual Members">Annual Members</a>
+</li>
+<li class="sub-menu-last" id="top_menu_141">
+<a href="/membership/birdies-for-charity/" title="Birdies For Charity">Birdies For Charity</a>
+</li>
+</ul>
+</li>
+<li class="" id="top_menu_145">
+<a href="/rental-spaces/" title="Rental Spaces">Rental Spaces</a>
+<span class="submenu"><span class="triangle"></span></span>
+<ul class="sub">
+<li class="sub-menu-first" id="top_menu_147">
+<a href="/rental-spaces/theater-rental/" title="Theater Rental ">Theater Rental </a>
+</li>
+<li class="" id="top_menu_148">
+<a href="/rental-spaces/gall-rental/" title="Gallery Rental">Gallery Rental</a>
+</li>
+<li class="sub-menu-last" id="top_menu_149">
+<a href="/rental-spaces/center-for-artists-and-edu/" title="Center for Artists and Education Rental">Center for Artists and Education Rental</a>
+</li>
+</ul>
+</li>
+<li class="main-menu-last" id="top_menu_133">
+<a href="/about/" title="About">About</a>
+<span class="submenu"><span class="triangle"></span></span>
+<ul class="sub">
+<li class="sub-menu-first" id="top_menu_146">
+<a href="/about/covid19-policies/" title="COVID-19 Policies">COVID-19 Policies</a>
+</li>
+<li class="" id="top_menu_142">
+<a href="/about/policies/" title="Policies">Policies</a>
+</li>
+<li class="" id="top_menu_103">
+<a href="/faq/" title="FAQ">FAQ</a>
+</li>
+<li class="" id="top_menu_109">
+<a href="/staff/" title="Staff">Staff</a>
+</li>
+<li class="" id="top_menu_136">
+<a href="/about/board-of-directors/" title="Board of Directors">Board of Directors</a>
+</li>
+<li class="" id="top_menu_143">
+<a href="/about/project-stage/" title="Project S.T.A.G.E.">Project S.T.A.G.E.</a>
+</li>
+<li class="" id="top_menu_106">
+<a href="/news/" title="News">News</a>
+</li>
+<li class="" id="top_menu_100">
+<a href="/employment/" title="Employment ">Employment </a>
+</li>
+<li class="sub-menu-last" id="top_menu_137">
+<a href="/about/volunteer/" title="Volunteer Program">Volunteer Program</a>
+</li>
+</ul>
+</li>
+<li>
+<div class="desktop">
+<a href="/contact"><div class="contact">Contact Us</div></a>
+</div>
+<div class="mobile">
+<a href="/contact">Contact Us</a>
+</div>
+</li>
+</ul>
+</nav> </header>
+<main class="cf">
+<section>
+<div class="container"><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWY_aV4Zm6rez6f4M2SFGFrX0TW3kCE8E"></script>
+<script>
+	function initialize() {
+		var mapCanvas = document.getElementById('map');
+		var mapOptions = {
+			center: new google.maps.LatLng(41.588643, -93.638339),
+			zoom: 16,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			scrollwheel: false
+		}
+		var map = new google.maps.Map(mapCanvas, mapOptions)
+		marker = new google.maps.Marker({
+			map: map,
+			icon: '/images/body/map-pin.png',
+			animation: google.maps.Animation.DROP,
+			position: new google.maps.LatLng(41.588643, -93.638339)
+		});
+		marker.addListener('click', toggleBounce);
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<div class="banner_main">
+<div class="banners cf" data-count="4" id="banners">
+<div class="banner">
+<img src="/documents/banner/4.jpg" title="Theater Stage"/>
+</div> </div>
+<div class="control">
+<div class="nav" id="banners_nav">
+<a data-index="1" href="#">1</a>
+<a data-index="2" href="#">2</a>
+<a data-index="3" href="#">3</a>
+<a data-index="4" href="#">4</a>
+</div>
+</div>
+<script id="slides" type="text/cycle">
+		["<div class=\"banner\">\r\n\t<img src=\"\/documents\/banner\/5.jpg\" title=\"Theater balcony\">\r\n\r\n\r\n<\/div>","<div class=\"banner\">\r\n\t<img src=\"\/documents\/banner\/6.jpg\" title=\"Theater Seats\">\r\n\r\n\r\n<\/div>","<div class=\"banner\">\r\n\t<img src=\"\/documents\/banner\/7.jpg\" title=\"Theater View\">\r\n\r\n\r\n<\/div>"]	</script>
+</div>
+<div class="left">
+<h1>Welcome to Hoyt Sherman Place</h1>
+<div class="cms_section cf media_align_none cms_section_odd">
+<div class="cms_section_layout_1">
+<div class="cms_section_content">
+<p>Nestled on the eastern edge of the historic Sherman Hill district in Des Moines, Iowa, Hoyt Sherman Place boasts one of Des Moines' most magnificent entertainment, banquet and meeting facilities. Built in 1877 by prominent pioneer businessman Hoyt Sherman, the elegant family home is graced with marble fireplaces, parquet floors and a carved mahogany entryway. Expanded over the years, the building also includes an impressive and elegant art gallery as well as grand and historic theater. Each room is available for special events and corporate functions.</p> </div>
+</div>
+</div>
+<div class="subbanners">
+<div class="subbanner">
+<img src="/documents/subbanner/1.jpg">
+<span class="subbanner_name">Rental Information</span>
+<div class="button"><a href="/rental-information" target="_self">Learn More</a></div>
+</img></div>
+<div class="subbanner">
+<img src="/documents/subbanner/2.jpg">
+<span class="subbanner_name">Become A Member</span>
+<div class="button"><a href="/membership" target="_blank">Learn More</a></div>
+</img></div>
+</div>
+</div>
+<div class="right">
+<div class="event_widget">
+<h2>Upcoming Events</h2>
+<div class="event">
+<a href="/calendar/events/event-317/">Charley Crockett: Jukebox Charley</a><br/>
+<em>Wednesday, March 30, 2022, 8:00pm</em>
+<div class="buy_tickets"><a href="https://www.ticketmaster.com/event/06005C2EA6A351DF?camefrom=CFC_HOYT_events_charleycrockett" target="_blank">Buy Tickets</a></div>
+</div>
+<div class="event">
+<a href="/calendar/events/event-321/">School of Classical Ballet and Dance Presents Alice in Wonderland</a><br/>
+<em>Saturday, April 2, 2022, 6:00pm</em>
+<div class="buy_tickets"><a href="https://www.ticketmaster.com/event/06005C4BE51C9878?camefrom=CFC_HOYT_events_alice_saturday" target="_blank">Buy Tickets</a></div>
+</div>
+<div class="event">
+<a href="/calendar/events/event-322/">School of Classical Ballet and Dance Presents Alice in Wonderland</a><br/>
+<em>Sunday, April 3, 2022, 1:00pm</em>
+<div class="buy_tickets"><a href="https://www.ticketmaster.com/event/06005C4BE521987E?camefrom=CFC_HOYT_events_alice_sundaymat" target="_blank">Buy Tickets</a></div>
+</div>
+<div class="signup"><a href="http://pages.tmclient.ticketmaster.com/Profile/?b=fd291d02-2d48-4a16-a6cb-5e00cb067272&amp;m=1310107" target="_blank">Sign Up For Event Alerts</a></div>
+</div>
+</div>
+<div class="map_container">
+<h2><a href="https://www.google.com/maps/dir//Hoyt+Sherman+Place,+1501+Woodland+Ave,+Des+Moines,+IA+50314,+United+States/@41.588643,-93.638339,17z/data=!4m12!1m3!3m2!1s0x87ee9919355a6b51:0x3930102c032050e7!2sHoyt+Sherman+Place!4m7!1m0!1m5!1m1!1s0x87ee9919355a6b51:0x3930102c032050e7!2m2!1d-93.638339!2d41.588643" target="_blank">Need Directions?</a></h2>
+<div id="map"></div>
+</div></div>
+</section>
+<aside>
+</aside>
+</main>
+<footer class="cf">
+<div class="container">
+<div class="social_media">
+<a class="facebook" href="https://www.facebook.com/hoytshermanplace" target="_blank" title="Facebook"></a>
+<a class="twitter" href="https://twitter.com/hoytsherman" target="_blank" title="Twitter"></a>
+<a class="pinterest" href="https://www.pinterest.com/Hoyt_Sherman" target="_blank" title="Pinterest"></a>
+<a class="youtube" href="http://www.youtube.com/hoytsherman" target="_blank" title="YouTube"></a>
+<a class="instagram" href="https://www.instagram.com/hoytshermanplace/" target="_blank" title="Instagram"></a>
+</div>
+<ul class="menu" id="bot-menu">
+<li class="main-menu-first" id="bot-menu-118"><a href="/calendar/events/" title="Events">Events</a></li>
+<li id="bot-menu-125"><a href="/theater/" title="Theater ">Theater </a></li>
+<li id="bot-menu-129"><a href="/gallery/" title="Art Gallery and Mansion ">Art Gallery and Mansion </a></li>
+<li id="bot-menu-132"><a href="/membership/" title="Membership">Membership</a></li>
+<li id="bot-menu-145"><a href="/rental-spaces/" title="Rental Spaces">Rental Spaces</a></li>
+<li class="main-menu-last" id="bot-menu-133"><a href="/about/" title="About">About</a></li>
+<li><a href="/admin/" target="_blank">Admin</a></li>
+</ul>
+<div class="legal">Copyright © 2022 Hoyt Sherman Place. All Rights Reserved.</div>
+<div class="address">1501 Woodland Ave. Des Moines, IA 50309 | (515) 244-0507 </div>
+<a class="vsi" href="http://www.visionary.com/solutions/website-design.html" target="_blank" title="Des Moines Custom Website Design by Visionary Services">Iowa Web design &amp; development by <strong>Visionary Services</strong></a>
+<div class="partner_widget">
+<div class="partner1">
+<a href="https://www.principalcharityclassic.com/charity/birdies-for-charity/" rel="nofollow" target="_blank" title="Birdies For Charity">
+<img alt="Birdies For Charity" src="/documents/partner/16.png"/>
+</a>
+</div>
+<div class="partner1">
+<a href="http://www.bravogreaterdesmoines.org/" rel="nofollow" target="_blank" title="Bravo">
+<img alt="Bravo" src="/documents/partner/1.jpg"/>
+</a>
+</div>
+<div class="partner1">
+<a href="https://www.desmoinesfoundation.org/" rel="nofollow" target="_blank" title="Community Foundation Greater Des Moines">
+<img alt="Community Foundation Greater Des Moines" src="/documents/partner/2.png"/>
+</a>
+</div>
+<div class="partner1">
+<a href="https://iowaculture.gov/arts" rel="nofollow" target="_blank" title="Iowa Arts Council">
+<img alt="Iowa Arts Council" src="/documents/partner/14.jpg"/>
+</a>
+</div>
+<div class="partner1">
+<a href="https://www.iowamuseums.org/Default.aspx" rel="nofollow" target="_blank" title="Iowa Museum Association">
+<img alt="Iowa Museum Association" src="/documents/partner/20.png"/>
+</a>
+</div>
+<div class="partner1">
+<a href="http://www.meredith.com/" rel="nofollow" target="_blank" title="Meredith Corporation">
+<img alt="Meredith Corporation" src="/documents/partner/13.png"/>
+</a>
+</div>
+<div class="partner1">
+<a href="https://www.midamericanenergy.com/" rel="nofollow" target="_blank" title="MidAmerican Energy">
+<img alt="MidAmerican Energy" src="/documents/partner/12.png"/>
+</a>
+</div>
+<div class="partner1">
+<a href="https://www.nivassoc.org/" rel="nofollow" target="_blank" title="National Independent Venue Association">
+<img alt="National Independent Venue Association" src="/documents/partner/17.jpg"/>
+</a>
+</div>
+<div class="partner1">
+<a href="https://www.polkcountyiowa.gov/" rel="nofollow" target="_blank" title="Polk County">
+<img alt="Polk County" src="/documents/partner/19.png"/>
+</a>
+</div>
+<div class="partner1">
+<a href="http://www.prairiemeadows.com/" rel="nofollow" target="_blank" title="Prairie Meadows">
+<img alt="Prairie Meadows" src="/documents/partner/4.jpg"/>
+</a>
+</div>
+<div class="partner1">
+<a href="https://www.principal.com/" rel="nofollow" target="_blank" title="Principal Foundation">
+<img alt="Principal Foundation" src="/documents/partner/18.png"/>
+</a>
+</div>
+<div class="partner1">
+<a href="https://www.sammonsfinancialgroup.com/" rel="nofollow" target="_blank" title="Sammons Financial Group">
+<img alt="Sammons Financial Group" src="/documents/partner/15.png"/>
+</a>
+</div>
+<div class="partner1">
+<a href="http://historicshermanhill.com/" rel="nofollow" target="_blank" title="Sherman Hill Association">
+<img alt="Sherman Hill Association" src="/documents/partner/5.png"/>
+</a>
+</div>
+<div class="partner1">
+<a href="http://www.ticketmaster.com/" rel="nofollow" target="_blank" title="Ticketmaster">
+<img alt="Ticketmaster" src="/documents/partner/6.png"/>
+</a>
+</div>
+<div class="partner1">
+<a href="https://www.unitypoint.org/desmoines/" rel="nofollow" target="_blank" title="Unity Point Health Des Moines">
+<img alt="Unity Point Health Des Moines" src="/documents/partner/8.png"/>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57086150-26', 'auto');
+  ga('send', 'pageview');
+
+</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"56969e1001","applicationID":"1128823026","transactionName":"ZlFQZxBUX0QCBUVaXV8bZ0ELGlhZBwNJHUJZRA==","queueTime":0,"applicationTime":146,"atts":"ShZTEVhOTEo=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

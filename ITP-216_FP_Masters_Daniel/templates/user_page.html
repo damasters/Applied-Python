@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>ITP-216: NFL Teams and Players Visualization Project</h1>
+    <h2> Please enter an NFL team to view the Top 10 Average Yearly Salary Players </h2>
+    <h3> NFL Teams: </h3>
+    <img src="https://i.pinimg.com/736x/5b/31/0d/5b310da585c6712a7721f144aa3ead87--sports-fanatics-team-names.jpg" alt="Pic of NFL Teams"/>
+    <form action="/team" method="POST">
+        <input type="team_name" name="team_name" placeholder="Enter a NFL team name">
+        <input type="submit" value="Submit">
+    </form>
+    <h2> OR Input Three Different Ages to use the NFL Total Value Predictor </h2>
+    <form action="/predict" method="POST">
+        <input type="age1" name="age1" placeholder="Enter an age #1 (22-50)">
+        <input type="submit" value="Submit">
+        <h2> </h2>
+        <input type="age2" name="age2" placeholder="Enter an age #2 (22-50)">
+        <input type="submit" value="Submit">
+        <h2> </h2>
+        <input type="age3" name="age3" placeholder="Enter an age #3 (22-50)">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

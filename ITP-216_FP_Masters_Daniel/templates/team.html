@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Salaries </title>
+</head>
+<body>
+    <h1> Graph of Top 10 Players' Average Yearly Salaries for the {{ team }} </h1>
+    <img src="{{ url_for('plot') }}" alt="Image of players' salaries">
+    <form action="/home" method="POST">
+        <input type="submit" value="Home">
+    </form>
+</body>
+</html>
